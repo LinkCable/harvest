@@ -21,5 +21,21 @@ class MainViewController: UIViewController {
     }
 
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? PickingCell{
+            if (cell.selection == "Name"){
+                let secondViewController = segue.destinationViewController as! SelectionViewController
+                secondViewController.category = "Names"
+            }
+            if (cell.selection == "Route"){
+                let secondViewController = segue.destinationViewController as! SelectionViewController
+                secondViewController.category = "Routes"
+            }
+            if (cell.selection == "Carrying"){
+                let secondViewController = segue.destinationViewController as! SelectionViewController
+                secondViewController.category = "Items"
+            }
+        }
+    }
 }
 

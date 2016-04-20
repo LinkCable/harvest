@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22CE43DC2B7F5689F5DF5197 /* Pods_harvest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D3DA519960BA38D03644B0 /* Pods_harvest.framework */; };
+		4A5C8A421CC742A4000B92B2 /* PickingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C8A411CC742A4000B92B2 /* PickingCell.swift */; };
 		4AD59E8B1CC538BF0059E05E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD59E8A1CC538BF0059E05E /* AppDelegate.swift */; };
 		4AD59E8D1CC538BF0059E05E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD59E8C1CC538BF0059E05E /* MainViewController.swift */; };
 		4AD59E901CC538BF0059E05E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AD59E8E1CC538BF0059E05E /* Main.storyboard */; };
@@ -17,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A5C8A411CC742A4000B92B2 /* PickingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickingCell.swift; sourceTree = "<group>"; };
 		4AD59E871CC538BF0059E05E /* harvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD59E8A1CC538BF0059E05E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AD59E8C1CC538BF0059E05E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -24,8 +27,11 @@
 		4AD59E911CC538BF0059E05E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AD59E941CC538BF0059E05E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AD59E961CC538BF0059E05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AD59E9E1CC542DA0059E05E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
+		4AD59E9E1CC542DA0059E05E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		4AD59EA01CC546620059E05E /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		78D3DA519960BA38D03644B0 /* Pods_harvest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_harvest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D606A8A9ACDA3EBAB874420 /* Pods-harvest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harvest.release.xcconfig"; path = "Pods/Target Support Files/Pods-harvest/Pods-harvest.release.xcconfig"; sourceTree = "<group>"; };
+		8D340E3778D839B673C8B991 /* Pods-harvest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harvest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harvest/Pods-harvest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CE43DC2B7F5689F5DF5197 /* Pods_harvest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CC9DB0B706802401A441C3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D340E3778D839B673C8B991 /* Pods-harvest.debug.xcconfig */,
+				7D606A8A9ACDA3EBAB874420 /* Pods-harvest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4AD59E7E1CC538BF0059E05E = {
 			isa = PBXGroup;
 			children = (
 				4AD59E891CC538BF0059E05E /* harvest */,
 				4AD59E881CC538BF0059E05E /* Products */,
+				0CC9DB0B706802401A441C3B /* Pods */,
+				602E804408222001B0BD63A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +84,17 @@
 				4AD59E911CC538BF0059E05E /* Assets.xcassets */,
 				4AD59E931CC538BF0059E05E /* LaunchScreen.storyboard */,
 				4AD59E961CC538BF0059E05E /* Info.plist */,
+				4A5C8A411CC742A4000B92B2 /* PickingCell.swift */,
 			);
 			path = harvest;
+			sourceTree = "<group>";
+		};
+		602E804408222001B0BD63A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78D3DA519960BA38D03644B0 /* Pods_harvest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AD59E991CC538BF0059E05E /* Build configuration list for PBXNativeTarget "harvest" */;
 			buildPhases = (
+				78B9528C2C046AC35D9CBDB2 /* Check Pods Manifest.lock */,
 				4AD59E831CC538BF0059E05E /* Sources */,
 				4AD59E841CC538BF0059E05E /* Frameworks */,
 				4AD59E851CC538BF0059E05E /* Resources */,
+				97EA6D1AF773FDC983FABBEA /* Embed Pods Frameworks */,
+				EDF4EA2527A902E5D733A598 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,6 +167,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		78B9528C2C046AC35D9CBDB2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		97EA6D1AF773FDC983FABBEA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harvest/Pods-harvest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDF4EA2527A902E5D733A598 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harvest/Pods-harvest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4AD59E831CC538BF0059E05E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +222,7 @@
 			files = (
 				4AD59E8D1CC538BF0059E05E /* MainViewController.swift in Sources */,
 				4AD59EA11CC546620059E05E /* SelectionViewController.swift in Sources */,
+				4A5C8A421CC742A4000B92B2 /* PickingCell.swift in Sources */,
 				4AD59E9F1CC542DA0059E05E /* TableViewController.swift in Sources */,
 				4AD59E8B1CC538BF0059E05E /* AppDelegate.swift in Sources */,
 			);
@@ -258,6 +337,7 @@
 		};
 		4AD59E9A1CC538BF0059E05E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D340E3778D839B673C8B991 /* Pods-harvest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = harvest/Info.plist;
@@ -269,6 +349,7 @@
 		};
 		4AD59E9B1CC538BF0059E05E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D606A8A9ACDA3EBAB874420 /* Pods-harvest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = harvest/Info.plist;
@@ -297,6 +378,7 @@
 				4AD59E9B1CC538BF0059E05E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

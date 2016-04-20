@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +20,7 @@ class TableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         tableView.tableFooterView = UIView()
         tableView.scrollEnabled = false
+        tableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +37,11 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
-
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as! PickingCell
+        currentCell.selection = currentCell.textLabel?.text
+        self.parentViewController?.performSegueWithIdentifier("select", sender: currentCell)
+    }
 
 }

@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Island Harvest-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="harvest" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,9 +37,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Island Harvest" id="doE-LN-jJG"/>
+                    <navigationItem key="navigationItem" id="doE-LN-jJG"/>
                     <connections>
-                        <segue destination="egF-z3-cBA" kind="push" identifier="names" id="Vtz-H0-hXX"/>
+                        <segue destination="egF-z3-cBA" kind="push" identifier="select" id="Vtz-H0-hXX"/>
+                        <segue destination="XzD-gk-KzZ" kind="push" identifier="start" id="DA5-Bb-A47"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -57,7 +58,7 @@
                         <sections>
                             <tableViewSection id="Txr-gs-M2B">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="pTn-mp-Fl4" detailTextLabel="Kb8-tx-ovg" style="IBUITableViewCellStyleValue1" id="4T9-PT-JrH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="pTn-mp-Fl4" detailTextLabel="Kb8-tx-ovg" style="IBUITableViewCellStyleValue1" id="4T9-PT-JrH" customClass="PickingCell" customModule="harvest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4T9-PT-JrH" id="Kgi-0e-dN2">
@@ -81,7 +82,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="quB-HY-D94" detailTextLabel="pTe-6T-JAW" style="IBUITableViewCellStyleValue1" id="4V5-N5-ol4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="quB-HY-D94" detailTextLabel="pTe-6T-JAW" style="IBUITableViewCellStyleValue1" id="4V5-N5-ol4" customClass="PickingCell" customModule="harvest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4V5-N5-ol4" id="nYl-Cj-2Ed">
@@ -105,7 +106,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" editingAccessoryType="disclosureIndicator" textLabel="B0e-G8-q7w" detailTextLabel="nzA-N7-YkA" style="IBUITableViewCellStyleValue1" id="CB0-Ku-vf9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" editingAccessoryType="disclosureIndicator" textLabel="B0e-G8-q7w" detailTextLabel="nzA-N7-YkA" style="IBUITableViewCellStyleValue1" id="CB0-Ku-vf9" customClass="PickingCell" customModule="harvest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CB0-Ku-vf9" id="utz-Hy-PUE">
@@ -137,7 +138,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAE-oS-871" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="924"/>
+            <point key="canvasLocation" x="684" y="940"/>
         </scene>
         <!--Selection View Controller-->
         <scene sceneID="Jvj-6h-R3C">
@@ -155,7 +156,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fTU-QY-29L">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectionCell" id="fTU-QY-29L">
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fTU-QY-29L" id="zez-Gq-rze">
@@ -168,7 +169,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wIw-yb-Abl"/>
+                    <navigationItem key="navigationItem" id="wIw-yb-Abl">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="PKF-pE-fBi"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="EgK-Lm-466" id="cqm-qb-RGB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htB-Uq-Y6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,6 +188,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="4UX-HD-Lgm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.17254901959999999" green="0.47373560860000002" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -192,6 +199,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQv-Ia-JUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162" y="368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wtV-I8-qAl">
+            <objects>
+                <viewController id="XzD-gk-KzZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wlJ-IN-O4h"/>
+                        <viewControllerLayoutGuide type="bottom" id="HGE-9A-egc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8AB-PM-jpK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MIp-fs-Ixp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FEb-lj-voB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162" y="1091"/>
         </scene>
     </scenes>
     <resources>
