@@ -24,6 +24,9 @@
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FwA-OF-AZM"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Mbw-Yu-faj">
                                 <rect key="frame" x="40" y="79" width="240" height="87"/>
@@ -52,7 +55,7 @@
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="4WB-eh-2w2" customClass="TableViewController" customModule="harvest" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kty-hc-6h9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="266"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -69,7 +72,7 @@
                                                     <rect key="frame" x="15" y="12" width="43" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.17254901959999999" green="0.47373560860000002" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="John Smith" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kb8-tx-ovg">
@@ -93,7 +96,7 @@
                                                     <rect key="frame" x="15" y="12" width="42.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.17254901959999999" green="0.47373560860000002" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Example" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pTe-6T-JAW">
@@ -117,7 +120,7 @@
                                                     <rect key="frame" x="15" y="12" width="62" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.17254901959999999" green="0.47373560860000002" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tap here" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nzA-N7-YkA">
@@ -138,7 +141,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAE-oS-871" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="940"/>
+            <point key="canvasLocation" x="684" y="1064"/>
         </scene>
         <!--Selection View Controller-->
         <scene sceneID="Jvj-6h-R3C">
@@ -178,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htB-Uq-Y6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168" y="368"/>
+            <point key="canvasLocation" x="1170" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JJK-44-hID">
@@ -200,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="162" y="368"/>
         </scene>
-        <!--View Controller-->
+        <!--In Transit-->
         <scene sceneID="wtV-I8-qAl">
             <objects>
-                <viewController id="XzD-gk-KzZ" sceneMemberID="viewController">
+                <viewController id="XzD-gk-KzZ" customClass="TransitViewController" customModule="harvest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wlJ-IN-O4h"/>
                         <viewControllerLayoutGuide type="bottom" id="HGE-9A-egc"/>
@@ -211,16 +214,83 @@
                     <view key="view" contentMode="scaleToFill" id="8AB-PM-jpK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65g-ww-AOf">
+                                <rect key="frame" x="52" y="479" width="217" height="30"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.47373560860000002" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Arrived">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onArrive:" destination="XzD-gk-KzZ" eventType="touchUpInside" id="Y1a-bE-Blt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iea-th-ctK">
+                                <rect key="frame" x="30" y="177" width="261" height="70"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="58"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.47373560860000002" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="elapsed since pickup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6O-zT-UAN">
+                                <rect key="frame" x="61" y="255" width="198" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.47373560860000002" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MIp-fs-Ixp"/>
+                    <navigationItem key="navigationItem" title="In Transit" id="MIp-fs-Ixp"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="Iea-th-ctK" id="IbP-4x-5Vg"/>
+                        <segue destination="Sqe-lS-Arl" kind="push" identifier="arrive" id="O5b-n5-56W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEb-lj-voB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="1091"/>
+            <point key="canvasLocation" x="1170" y="769"/>
+        </scene>
+        <!--Arrived-->
+        <scene sceneID="KTY-dj-xt4">
+            <objects>
+                <viewController id="Sqe-lS-Arl" customClass="ArrivedViewController" customModule="harvest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nlD-5r-CH1"/>
+                        <viewControllerLayoutGuide type="bottom" id="fCl-vw-0Dr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OdT-Hp-pXX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p76-Dt-YOs">
+                                <rect key="frame" x="55" y="498" width="210" height="33"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.47373560860000002" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start a new run">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OsC-p2-L43" customClass="SwiftSignatureView" customModule="SwiftSignatureView">
+                                <rect key="frame" x="20" y="314" width="280" height="128"/>
+                                <color key="backgroundColor" red="0.83725952199999998" green="0.83825533279999997" blue="0.84392755679999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Arrived" id="EdE-4m-y5i"/>
+                    <connections>
+                        <outlet property="signatureView" destination="OsC-p2-L43" id="ZfZ-ga-nt7"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="reset" id="cO7-US-V4R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtW-st-0d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1594" y="769"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo" width="303" height="117"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cO7-US-V4R"/>
+    </inferredMetricsTieBreakers>
 </document>

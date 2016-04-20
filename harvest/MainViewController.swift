@@ -37,5 +37,9 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func onStart(sender: AnyObject) {
+        self.performSegueWithIdentifier("start", sender: sender)
+    }
 }
 
