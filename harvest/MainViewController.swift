@@ -10,14 +10,35 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    var run: Run = Run()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.hidesBackButton = true;
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func unwindToSegue (segue : UIStoryboardSegue) {
+        print(segue)
+        if(segue.sourceViewController.isKindOfClass(SelectionViewController))
+        {
+            let view2 = segue.sourceViewController as! SelectionViewController
+            if (view2.category == "Names"){
+                self.run.selectedName = view2.selected
+            }
+            if (view2.category == "Donors"){
+                self.run.selectedDonor = view2.selected
+            }
+            if (view2.category == "Recipients"){
+                self.run.selectedRecipient = view2.selected
+            }
+        }
     }
 
 
@@ -27,9 +48,13 @@ class MainViewController: UIViewController {
                 let secondViewController = segue.destinationViewController as! SelectionViewController
                 secondViewController.category = "Names"
             }
-            if (cell.selection == "Route"){
+            if (cell.selection == "Donor"){
                 let secondViewController = segue.destinationViewController as! SelectionViewController
-                secondViewController.category = "Routes"
+                secondViewController.category = "Donors"
+            }
+            if (cell.selection == "Recipient"){
+                let secondViewController = segue.destinationViewController as! SelectionViewController
+                secondViewController.category = "Recipients"
             }
             if (cell.selection == "Carrying"){
                 let secondViewController = segue.destinationViewController as! SelectionViewController
@@ -37,6 +62,7 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
     
     @IBAction func onStart(sender: AnyObject) {
         self.performSegueWithIdentifier("start", sender: sender)

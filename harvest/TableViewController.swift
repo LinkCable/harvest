@@ -9,6 +9,12 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+
+    
+    @IBOutlet weak var selectedNameLabel: UILabel!
+    @IBOutlet weak var selectedDonorLabel: UILabel!
+    @IBOutlet weak var selectedRecipientLabel: UILabel!
+    @IBOutlet weak var selectedFoodLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,15 @@ class TableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.scrollEnabled = false
         tableView.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let parent = self.parentViewController as! MainViewController
+        
+        selectedNameLabel.text = parent.run.selectedName
+        selectedDonorLabel.text = parent.run.selectedDonor
+        selectedRecipientLabel.text = parent.run.selectedRecipient
+        selectedFoodLabel.text = parent.run.selectedFood
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +50,7 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

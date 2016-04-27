@@ -11,10 +11,13 @@ import SwiftSignatureView
 
 class ArrivedViewController: UIViewController {
 
-    @IBOutlet weak var signatureView: SwiftSignatureView!
+    @IBOutlet weak var agencySignatureView: SwiftSignatureView!
+    
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true;
 
         // Do any additional setup after loading the view.
     }
