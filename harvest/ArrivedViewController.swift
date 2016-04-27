@@ -15,11 +15,15 @@ class ArrivedViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    var time: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true;
 
         // Do any additional setup after loading the view.
+    
+        timeLabel.text = time
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +31,9 @@ class ArrivedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onReset(sender: AnyObject) {
+        performSegueWithIdentifier("reset", sender: sender)
+    }
 
     /*
     // MARK: - Navigation

@@ -16,8 +16,7 @@ class TransitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true;
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -71,9 +70,17 @@ class TransitViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
     @IBAction func onArrive(sender: AnyObject) {
         timer.invalidate()
         self.performSegueWithIdentifier("arrive", sender: sender)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "arrive" {
+            let secondViewController = segue.destinationViewController as! ArrivedViewController
+            secondViewController.time = timeLabel.text
+        }
     }
 }
