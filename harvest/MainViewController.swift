@@ -38,6 +38,9 @@ class MainViewController: UIViewController {
             if (view2.category == "Recipients"){
                 self.run.selectedRecipient = view2.selected
             }
+            if (view2.category == "Items") {
+                self.run.selectedFood = view2.selected
+            }
         }
     }
 
@@ -65,7 +68,14 @@ class MainViewController: UIViewController {
     
     
     @IBAction func onStart(sender: AnyObject) {
-        self.performSegueWithIdentifier("start", sender: sender)
+        if (run.selectedName == "Tap here" || run.selectedFood == "Tap here" || run.selectedDonor == "Tap here" ||  run.selectedRecipient == "Tap here") {
+            let alert = UIAlertController(title: "Error", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else{
+            self.performSegueWithIdentifier("start", sender: sender)
+        }
     }
 }
 

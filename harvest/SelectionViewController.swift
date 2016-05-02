@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -21,17 +22,9 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         self.navigationItem.title = category
+        cellObjects = []
         
-        if category == "Names" {
-            cellObjects = ["Kati Hunter", "Carolee Ver", "Maximo Duke", "Armando Jawad", "Millicent Timmins", "Mendy Bartolo", "Jessi Schutz", "Sima Eberly", "Charmaine Evatt", "Isidro Apolinar", "Mae Troy", "Bret Shurtz", "Mary Bevers", "Maryjane Kukowski"]
-        }
-        if category == "Donors" {
-            cellObjects = ["7-11 Carle Place", "7-11 Great Neck", "7-11 Lawrence", "Auntie Anne's Pretzels (Mall Hick)", "Bagelman G C",]
-        }
-        if category == "Recipients" {
-            cellObjects = ["Our Holy Redeemer", "Salvation Army Westbury", "Saint Raymond's Parish", "Hicksville Boy's and Girl's Club", "LI Teen Challenge"]
-        }
-        
+        getObjects()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,10 +39,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
             return 0
         }
     }
-    
-    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SelectionCell", forIndexPath: indexPath)
         cell.textLabel?.text = cellObjects![indexPath.row] as String
@@ -66,6 +56,67 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
         if let senderCell = sender as? UITableViewCell {
             selected = senderCell.textLabel?.text
         }
+    }
+    
+    
+    func getObjects() {
+        
+        var querySelector: String?
+        
+        if category == "Names" {
+            querySelector = "Person"
+        }
+        if category == "Donors" || category == "Recipients" {
+            querySelector = "Location"
+        }
+        if category == "Items" {
+            querySelector = "Item"
+        }
+        
+        var query = PFQuery(className:"\(querySelector!)")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                
+                if let objects = objects {
+                    
+                    if querySelector == "Person" {
+                        for object in objects {
+                            print(object["firstName"])
+                            let firstName = object["firstName"] as! String
+                            let lastName = object["lastName"] as! String
+                            self.cellObjects?.append(firstName + " " + lastName)
+                        }
+                    }
+                    
+                    if querySelector == "Location" {
+                        for object in objects {
+                            let location = object["locationName"] as! String
+                            self.cellObjects?.append(location)
+                        }
+                    }
+                    
+                    if querySelector == "Item" {
+                        for object in objects {
+                            let food = object["foodName"] as! String
+                            self.cellObjects?.append(food)
+                        }
+                    }
+                    
+                    print(self.cellObjects)
+                    self.tableView.reloadData()
+                }
+                
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+        
     }
     /*
     // MARK: - Navigation

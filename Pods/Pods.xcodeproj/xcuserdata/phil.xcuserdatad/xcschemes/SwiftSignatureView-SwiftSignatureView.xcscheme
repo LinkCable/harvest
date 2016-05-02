@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '80CADC0ABBA60863E139CFF9'
+               BlueprintIdentifier = 'BE14D4D007DE885052F2D725'
                BlueprintName = 'SwiftSignatureView-SwiftSignatureView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SwiftSignatureView.bundle'>

@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-harvest/Bolts.framework"
+  install_framework "Pods-harvest/Parse.framework"
   install_framework "Pods-harvest/SwiftSignatureView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-harvest/Bolts.framework"
+  install_framework "Pods-harvest/Parse.framework"
   install_framework "Pods-harvest/SwiftSignatureView.framework"
 fi

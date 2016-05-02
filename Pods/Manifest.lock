@@ -1,10 +1,16 @@
 PODS:
+  - Bolts/Tasks (1.7.0)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
   - SwiftSignatureView (0.0.9)
 
 DEPENDENCIES:
+  - Parse
   - SwiftSignatureView
 
 SPEC CHECKSUMS:
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   SwiftSignatureView: 8fb2402e02014ee3536f9ca4fa0724c641bc3023
 
 COCOAPODS: 0.39.0
