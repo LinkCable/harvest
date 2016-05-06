@@ -32,7 +32,18 @@ class ArrivedViewController: UIViewController {
     }
     
     @IBAction func onReset(sender: AnyObject) {
-        performSegueWithIdentifier("reset", sender: sender)
+        if (agencySignatureView.signature == nil) {
+                let alert = UIAlertController(title: "Error", message: "Agency signature required", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else{
+            Run.sharedInstance.recipientSignature = agencySignatureView.signature
+            Run.sharedInstance.selectedDonor = "Tap here"
+            Run.sharedInstance.selectedRecipient = "Tap here"
+            Run.sharedInstance.selectedFood = "Tap here"
+            performSegueWithIdentifier("reset", sender: sender)
+        }
     }
 
     /*

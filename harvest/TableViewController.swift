@@ -30,12 +30,11 @@ class TableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        let parent = self.parentViewController as! MainViewController
         
-        selectedNameLabel.text = parent.run.selectedName
-        selectedDonorLabel.text = parent.run.selectedDonor
-        selectedRecipientLabel.text = parent.run.selectedRecipient
-        selectedFoodLabel.text = parent.run.selectedFood
+        selectedNameLabel.text = Run.sharedInstance.selectedName
+        selectedDonorLabel.text = Run.sharedInstance.selectedDonor
+        selectedRecipientLabel.text = Run.sharedInstance.selectedRecipient
+        selectedFoodLabel.text = Run.sharedInstance.selectedFood
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,6 +13,10 @@ class Run: NSObject {
     var selectedDonor: String?
     var selectedRecipient: String?
     var selectedFood: String?
+    var donorSignature: UIImage?
+    var recipientSignature: UIImage?
+    
+    static let sharedInstance = Run()
     
     override init() {
         selectedName = "Tap here"

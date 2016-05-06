@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SwiftSignatureView
 
 class MainViewController: UIViewController {
 
-    var run: Run = Run()
-
+    @IBOutlet weak var donorSignatureView: SwiftSignatureView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,16 +31,16 @@ class MainViewController: UIViewController {
         {
             let view2 = segue.sourceViewController as! SelectionViewController
             if (view2.category == "Names"){
-                self.run.selectedName = view2.selected
+                Run.sharedInstance.selectedName = view2.selected
             }
             if (view2.category == "Donors"){
-                self.run.selectedDonor = view2.selected
+                Run.sharedInstance.selectedDonor = view2.selected
             }
             if (view2.category == "Recipients"){
-                self.run.selectedRecipient = view2.selected
+                Run.sharedInstance.selectedRecipient = view2.selected
             }
             if (view2.category == "Items") {
-                self.run.selectedFood = view2.selected
+                Run.sharedInstance.selectedFood = view2.selected
             }
         }
     }
@@ -68,12 +69,24 @@ class MainViewController: UIViewController {
     
     
     @IBAction func onStart(sender: AnyObject) {
-        if (run.selectedName == "Tap here" || run.selectedFood == "Tap here" || run.selectedDonor == "Tap here" ||  run.selectedRecipient == "Tap here") {
+        if (Run.sharedInstance.selectedName == "Tap here" || Run.sharedInstance.selectedFood == "Tap here" || Run.sharedInstance.selectedDonor == "Tap here" ||  Run.sharedInstance.selectedRecipient == "Tap here") {
             let alert = UIAlertController(title: "Error", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
+        else if (Run.sharedInstance.selectedDonor == Run.sharedInstance.selectedRecipient) {
+            let alert = UIAlertController(title: "Error", message: "Donor can't be same as recipient", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+        }
+        else if(donorSignatureView.signature == nil) {
+            let alert = UIAlertController(title: "Error", message: "Donor signature required", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         else{
+            Run.sharedInstance.donorSignature = donorSignatureView.signature
             self.performSegueWithIdentifier("start", sender: sender)
         }
     }
